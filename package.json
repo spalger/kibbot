@@ -6,8 +6,7 @@
   "scripts": {
     "test": "mocha 'lib/**/__tests__/**/*.js'",
     "dev": "rm -rf lib; babel --out-dir lib --copy-files --watch --source-maps inline src",
-    "build": "babel --out-dir lib --copy-files src",
-    "postinstall": "npm run build"
+    "build": "babel --out-dir lib --copy-files src"
   },
   "keywords": [],
   "author": "Spencer Alger <email@spalger.com>",
