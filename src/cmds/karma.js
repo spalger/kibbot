@@ -45,5 +45,5 @@ export async function handler(cmd, { name, amount }) {
   const previous = parseInt(await fn(cb => karmaStorage.getItem(name, cb)), 10)
   const current = isNaN(previous) ? amount : previous + amount
   await karmaStorage.setItem(name, current)
-  return current
+  return `${name} now has ${amount} karma`
 }
