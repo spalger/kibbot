@@ -29,6 +29,7 @@ export function loadFile(path) {
 
   try {
     yaml = readFileSync(path, 'utf8')
+    console.log('loaded config from yaml file', yaml);
   } catch (e) {
     return null
   }
@@ -54,16 +55,20 @@ export function readFromEnv() {
     }
   }(schema, []))
 
+  console.log('read config from the environment', valsFromEnv);
   return valsFromEnv
 }
 
 const location = process.env.BOT_CONFIG || resolve(__dirname, '../bot.yml')
+console.log('attempting to load config from file', location);
 const file = loadFile(location)
 const { error: errors, value: values } = Joi.validate(file || readFromEnv(), schema, {
   abortEarly: false,
   convert: true,
   allowUnknown: false,
 })
+
+console.log('ended up with config', { errors, values });
 
 if (errors) {
   const describe = (m, detail) => `${m}${m ? '\n' : ''}at "${detail.path}" :: ${detail.message}`
