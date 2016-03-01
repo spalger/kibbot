@@ -1,0 +1,6 @@
+{
+  "presets": [
+    "@spalger/babel-presets"
+  ],
+  "plugins": ["transform-runtime"]
+}
