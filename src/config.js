@@ -25,11 +25,15 @@ const schema = Joi.object().keys({
 }).default()
 
 export function loadFile(path) {
+  let yaml
+
   try {
-    return jsYaml.safeLoad(readFileSync(path, 'utf8'))
+    yaml = readFileSync(path, 'utf8')
   } catch (e) {
     return null
   }
+
+  return jsYaml.safeLoad(yaml)
 }
 
 export function readFromEnv() {
