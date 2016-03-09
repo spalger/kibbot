@@ -15,7 +15,7 @@
   "dependencies": {
     "babel-runtime": "^6.6.1",
     "bluebird": "^3.3.3",
-    "giphy-api": "^1.1.14",
+    "giphy-api": "spalger/giphy-api#implement/httpsSupport",
     "irc": "^0.4.1",
     "joi": "^8.0.3",
     "js-yaml": "^3.5.3",

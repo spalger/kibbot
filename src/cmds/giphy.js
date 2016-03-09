@@ -1,7 +1,7 @@
 import giphyFactory from 'giphy-api'
 
 const gifRequestRE = /^\s*(?:@?(?:kbn-hubot|hubot|bot):?)?\s*(gif|giphy)\s+([\w\W]*)/
-const giphy = giphyFactory()
+const giphy = giphyFactory({ https: true })
 
 export function parse(message) {
   const gifMatch = message.match(gifRequestRE)
