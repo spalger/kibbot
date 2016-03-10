@@ -6,8 +6,8 @@
     "test": "mocha 'lib/**/__tests__/**/*.js'",
     "dev": "npm run build -- --watch --source-maps inline",
     "build": "rm -rf lib; babel --out-dir lib --copy-files src",
-    "start_bot": "node lib/bot",
-    "start_connection": "node lib/connection"
+    "start_bot": "npm run build && node ./lib/bot",
+    "start_connection": "npm run build && node ./lib/connection"
   },
   "keywords": [],
   "author": "Spencer Alger <email@spalger.com>",

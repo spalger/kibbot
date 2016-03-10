@@ -1,1 +1,1 @@
-web: npm run build && npm run start_bot
+web: npm run start_bot
