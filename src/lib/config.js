@@ -8,6 +8,11 @@ const schema = Joi.object().keys({
   connection: Joi.object().keys({
     port: Joi.number().required(),
   }).default(),
+
+  client: Joi.object().keys({
+    url: Joi.string().uri().required(),
+  }).default(),
+
   bot: Joi.object().keys({
     nick: Joi.string().required(),
     channel: Joi.string().required(),
