@@ -23,9 +23,7 @@
     "nickserv": "^0.4.1",
     "node-persist": "0.0.8",
     "socket.io": "^1.4.5",
-    "socket.io-client": "^1.4.5"
-  },
-  "devDependencies": {
+    "socket.io-client": "^1.4.5",
     "@spalger/babel-presets": "0.0.1",
     "@spalger/eslint-config-personal": "^0.2.0",
     "babel-cli": "^6.6.0",
