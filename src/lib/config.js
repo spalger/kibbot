@@ -5,6 +5,9 @@ import Joi from 'joi'
 import jsYaml from 'js-yaml'
 
 const schema = Joi.object().keys({
+  connection: Joi.object().keys({
+    port: Joi.number().required(),
+  }).default(),
   bot: Joi.object().keys({
     nick: Joi.string().required(),
     channel: Joi.string().required(),
@@ -15,14 +18,15 @@ const schema = Joi.object().keys({
     realName: Joi.string().default(Joi.ref('nick')),
   }).default(),
   log: Joi.object().keys({
+    debug: Joi.boolean().default(false),
     path: Joi.string().default('stdout'),
     errorPath: Joi.string().default('stderr'),
     events: Joi.array().items(Joi.string()).default([]),
   }).default(),
   karma: Joi.object().keys({
-    storeDir: Joi.string().default(resolve(__dirname, '../karma.store')),
+    storeDir: Joi.string().default(resolve(__dirname, '../../karma.store')),
   }).default(),
-}).default()
+}).default().unknown(false)
 
 export function loadFile(path) {
   let yaml
@@ -57,7 +61,7 @@ export function readFromEnv() {
   return valsFromEnv
 }
 
-const location = process.env.BOT_CONFIG || resolve(__dirname, '../bot.yml')
+const location = process.env.BOT_CONFIG || resolve(__dirname, '../../bot.yml')
 const file = loadFile(location)
 const { error: errors, value: values } = Joi.validate(file || readFromEnv(), schema, {
   abortEarly: false,

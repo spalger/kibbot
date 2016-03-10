@@ -1,10 +1,4 @@
-import { parse as giphy } from './cmds/giphy'
-import { parse as karma } from './cmds/karma'
-
-const parsers = [
-  giphy,
-  karma,
-]
+import { parsers } from '../cmds'
 
 export async function parseMessage(message) {
   for (const parser of parsers) {

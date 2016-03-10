@@ -4,6 +4,7 @@ import { createWriteStream } from 'fs'
 import { getConfig } from './config'
 const logPath = getConfig('log.path')
 const logErrorPath = getConfig('log.errorPath')
+const logDebugOn = getConfig('log.debug')
 
 const toStream = (path) => {
   if (path === 'stdout') return process.stdout
@@ -20,4 +21,10 @@ export function log(...args) {
 const logErrStr = toStream(logErrorPath)
 export function logErr(...args) {
   logErrStr.write(`${format(...args)}\n`)
+}
+
+export function logDebug(...args) {
+  if (logDebugOn) {
+    logStr.write(`${format(...args)}\n`)
+  }
 }

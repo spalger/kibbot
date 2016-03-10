@@ -1,7 +1,7 @@
-import { handleIncomingMessage } from './routing'
-import { log, logErr } from './logging'
-import { client } from './irc'
-import { getConfig } from './config'
+import { handleIncomingMessage } from './lib/routing'
+import { log, logErr } from './lib/logging'
+import * as client from './lib/client'
+import { getConfig } from './lib/config'
 
 getConfig('log.events')
 .forEach(name => client.on(name, (...args) => {
