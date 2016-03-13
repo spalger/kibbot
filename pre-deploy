@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Kills previous instances of kibbot-connection before starting another
+
+local oldids=$(get_app_container_ids "$APP")
+
+# kill the old container
+if [[ -n "$oldids" ]]; then
+  dokku_log_info1 "Shutting down previous connection before starting"
+  local oldid
+  for oldid in $oldids; do
+    dokku_log_info2 "$oldid"
+  done
+
+  for oldid in $oldids; do
+    # Attempt to stop, if that fails, then force a kill as docker seems
+    # to not send SIGKILL as the docs would indicate. If that fails, move
+    # on to the next.
+    docker stop "$oldid" \
+    || docker kill "$oldid" \
+    || plugn trigger retire-container-failed "$APP" # plugin trigger for event logging
+  done
+
+  sleep 0.1
+fi
