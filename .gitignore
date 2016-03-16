@@ -1,5 +1,5 @@
 node_modules
 .env
-pacakges/*/lib
+packages/*/lib
 karma.store
 bot.yml
