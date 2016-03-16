@@ -1,7 +1,8 @@
 import karmaStorage from 'node-persist'
 import { fromNode as fn } from 'bluebird'
 
-import { getConfig } from '../lib/config'
+import { CMD_SAY } from '../constants'
+import { getConfig } from '../config'
 
 karmaStorage.initSync({
   dir: getConfig('karma.storeDir'),
@@ -18,8 +19,13 @@ export async function handler({ name, amount }) {
   const prevRaw = await fn(cb => karmaStorage.getItem(name, cb))
   const previous = parseInt(prevRaw, 10)
   const current = isNaN(previous) ? amount : previous + amount
+
   await karmaStorage.setItem(name, current)
-  return `${name} now has ${current} karma`
+
+  return {
+    type: CMD_SAY,
+    payload: `${name} now has ${current} karma`,
+  }
 }
 
 export function parse(message) {

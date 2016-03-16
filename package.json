@@ -2,12 +2,12 @@
   "name": "kbn-bot",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/bot.js",
   "scripts": {
     "test": "mocha 'lib/**/__tests__/**/*.js'",
     "dev": "npm run build -- --watch --source-maps inline",
     "build": "rm -rf lib; babel --out-dir lib --copy-files src",
-    "start_bot": "npm run build && node ./lib/bot",
-    "start_connection": "npm run build && node ./lib/connection"
+    "start": "npm run build && node ."
   },
   "keywords": [],
   "author": "Spencer Alger <email@spalger.com>",
@@ -16,13 +16,10 @@
     "babel-runtime": "^6.6.1",
     "bluebird": "^3.3.3",
     "giphy-api": "spalger/giphy-api#implement/httpsSupport",
-    "irc": "^0.4.1",
     "joi": "^8.0.3",
     "js-yaml": "^3.5.3",
     "lodash": "^4.5.1",
-    "nickserv": "^0.4.1",
     "node-persist": "0.0.8",
-    "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
     "@spalger/babel-presets": "0.0.1",
     "@spalger/eslint-config-personal": "^0.2.0",
@@ -36,7 +33,6 @@
     "sinon": "^1.17.3"
   },
   "engines": {
-    "node": "4.3.1",
-    "npm": "2.14.12"
+    "node": "5.*"
   }
 }

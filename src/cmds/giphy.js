@@ -1,5 +1,7 @@
 import giphyFactory from 'giphy-api'
 
+import { CMD_SAY } from '../constants'
+
 const gifRequestRE = /^\s*(?:@?(?:kbn-hubot|hubot|bot):?)?\s*(gif|giphy)\s+([\w\W]*)/
 const giphy = giphyFactory({ https: true })
 
@@ -9,7 +11,10 @@ export async function handler(args) {
     fmt: 'json',
   })
 
-  return resp.data.images.fixed_height.url
+  return {
+    type: CMD_SAY,
+    payload: resp.data.images.fixed_height.url,
+  }
 }
 
 export function parse(message) {

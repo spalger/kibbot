@@ -1,1 +1,1 @@
-web: npm run start_connection
+web: npm start
