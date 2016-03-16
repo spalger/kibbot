@@ -1,0 +1,38 @@
+{
+  "name": "kbn-bot",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/bot.js",
+  "scripts": {
+    "test": "mocha 'lib/**/__tests__/**/*.js'",
+    "dev": "npm run build -- --watch --source-maps inline",
+    "build": "rm -rf lib; babel --out-dir lib --copy-files src",
+    "start": "npm run build && node ."
+  },
+  "keywords": [],
+  "author": "Spencer Alger <email@spalger.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "babel-runtime": "^6.6.1",
+    "bluebird": "^3.3.3",
+    "giphy-api": "spalger/giphy-api#implement/httpsSupport",
+    "joi": "^8.0.3",
+    "js-yaml": "^3.5.3",
+    "lodash": "^4.5.1",
+    "node-persist": "0.0.8",
+    "socket.io-client": "^1.4.5",
+    "@spalger/babel-presets": "0.0.1",
+    "@spalger/eslint-config-personal": "^0.2.0",
+    "babel-cli": "^6.6.0",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "chai": "^3.5.0",
+    "eslint": "^2.2.0",
+    "eslint-plugin-react": "^4.1.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  },
+  "engines": {
+    "node": "5.*"
+  }
+}
