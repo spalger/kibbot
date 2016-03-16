@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "update": "babel-node scripts/update"
+  },
+  "devDependencies": {
+    "@spalger/babel-presets": "0.0.1",
+    "@spalger/eslint-config-personal": "^0.2.0",
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-runtime": "^6.6.1",
+    "chai": "^3.5.0",
+    "eslint": "^2.4.0",
+    "eslint-plugin-react": "^4.2.3",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  }
+}
