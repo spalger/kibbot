@@ -1,6 +1,6 @@
 import giphyFactory from 'giphy-api'
 
-import { CMD_SAY } from '../constants'
+import { ACTION_IRC_SAY } from 'kibbot-utils'
 
 const gifRequestRE = /^\s*(?:@?(?:kbn-hubot|hubot|bot):?)?\s*(gif|giphy)\s+([\w\W]*)/
 const giphy = giphyFactory({ https: true })
@@ -12,7 +12,7 @@ export async function handler(args) {
   })
 
   return {
-    type: CMD_SAY,
+    type: ACTION_IRC_SAY,
     payload: resp.data.images.fixed_height.url,
   }
 }

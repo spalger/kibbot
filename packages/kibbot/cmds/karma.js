@@ -1,8 +1,6 @@
 import karmaStorage from 'node-persist'
 import { fromNode as fn } from 'bluebird'
-
-import { CMD_SAY } from '../constants'
-import { getConfig } from '../config'
+import { getConfig, ACTION_IRC_SAY } from 'kibbot-utils'
 
 karmaStorage.initSync({
   dir: getConfig('karma.storeDir'),
@@ -23,7 +21,7 @@ export async function handler({ name, amount }) {
   await karmaStorage.setItem(name, current)
 
   return {
-    type: CMD_SAY,
+    type: ACTION_IRC_SAY,
     payload: `${name} now has ${current} karma`,
   }
 }

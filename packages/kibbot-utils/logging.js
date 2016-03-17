@@ -19,7 +19,7 @@ export function log(...args) {
 }
 
 const logErrStr = toStream(logErrorPath)
-export function logErr(...args) {
+export function logError(...args) {
   logErrStr.write(`${format(...args)}\n`)
 }
 

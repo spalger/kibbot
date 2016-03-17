@@ -1,17 +1,19 @@
 {
-  "name": "kibbot-connection",
-  "version": "0.0.1",
-  "description": "the underlying irc connection used by kibbot",
-  "main": "lib/irc-connection.js",
-  "keywords": [],
-  "author": "Spencer Alger <email@spalger.com>",
-  "license": "Apache-2.0",
+  "private": true,
+  "main": "irc_connection.js",
+
+  "scripts": {
+    "start": "babel-node ."
+  },
+
   "dependencies": {
     "bluebird": "^3.3.3",
     "irc": "^0.4.1",
+    "joi": "^8.0.4",
     "nickserv": "^0.4.1",
     "socket.io": "^1.4.5"
   },
+
   "engines": {
     "node": "5.*"
   }

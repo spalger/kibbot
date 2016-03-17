@@ -1,9 +1,9 @@
 import { format } from 'util'
+import { logError } from 'kibbot-utils'
 
-import { logErr } from './logging'
 import { parseMessage } from './parse'
+import { handlers } from './cmds'
 
-import { handlers } from '../cmds'
 
 export async function routeMessage({ cmd, args }) {
   if (handlers.has(cmd)) {
@@ -21,6 +21,6 @@ export function handleIncomingMessage(from, to, message) {
     // ignore messages that fail to parse
     if (!parsed) return
 
-    routeMessage(parsed).catch(err => logErr(`ROUTE MESSAGE FAILURE \n${err.stack}`))
+    routeMessage(parsed).catch(err => logError(`ROUTE MESSAGE FAILURE \n${err.stack}`))
   })
 }

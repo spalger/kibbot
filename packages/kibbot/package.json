@@ -1,20 +1,20 @@
 {
-  "name": "kbn-bot",
-  "version": "0.0.0",
-  "description": "",
-  "main": "lib/kibbot.js",
-  "keywords": [],
-  "author": "Spencer Alger <email@spalger.com>",
-  "license": "Apache-2.0",
+  "name": "kibbot",
+  "private": true,
+  "main": "kibbot.js",
+
+  "scripts": {
+    "start": "babel-node ."
+  },
+
   "dependencies": {
     "bluebird": "^3.3.3",
     "giphy-api": "spalger/giphy-api#implement/httpsSupport",
-    "joi": "^8.0.3",
-    "js-yaml": "^3.5.3",
     "lodash": "^4.5.1",
     "node-persist": "0.0.8",
     "socket.io-client": "^1.4.5"
   },
+
   "engines": {
     "node": "5.*"
   }

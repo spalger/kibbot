@@ -1,4 +1,4 @@
-import { parsers } from '../cmds'
+import { parsers } from './cmds'
 
 export async function parseMessage(message) {
   for (const parser of parsers) {
