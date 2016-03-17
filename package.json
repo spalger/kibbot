@@ -4,7 +4,6 @@
   "scripts": {
     "start": "babel-node scripts start",
     "update": "babel-node scripts update",
-    "setup": "babel-node scripts setup",
     "dev": "babel-node scripts dev"
   },
   "devDependencies": {
@@ -17,5 +16,8 @@
     "eslint-plugin-react": "^4.2.3",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3"
+  },
+  "engine": {
+    "node": "5.x"
   }
 }

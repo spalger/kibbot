@@ -8,7 +8,7 @@ import {
   ACTION_IRC_CLIENT_EVENT,
   ACTION_REQUEST_CONSUMER_IDENT,
   ACTION_RECEIVE_CONSUMER_IDENT,
-} from 'kibbot-utils'
+} from 'kibbot_utils'
 
 import { handleIncomingMessage } from './routing'
 const socket = new SocketIo(getConfig('connection.url'))

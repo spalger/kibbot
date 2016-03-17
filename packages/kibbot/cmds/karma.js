@@ -1,6 +1,6 @@
 import karmaStorage from 'node-persist'
 import { fromNode as fn } from 'bluebird'
-import { getConfig, ACTION_IRC_SAY } from 'kibbot-utils'
+import { getConfig, ACTION_IRC_SAY } from 'kibbot_utils'
 
 karmaStorage.initSync({
   dir: getConfig('karma.storeDir'),

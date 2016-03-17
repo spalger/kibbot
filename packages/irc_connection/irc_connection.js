@@ -1,5 +1,5 @@
 import Server from 'socket.io'
-import { getConfig, logDebug, logError } from 'kibbot-utils'
+import { getConfig, logDebug, logError } from 'kibbot_utils'
 
 import { Consumer } from './consumer'
 

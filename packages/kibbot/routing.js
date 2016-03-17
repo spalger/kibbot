@@ -1,5 +1,5 @@
 import { format } from 'util'
-import { logError } from 'kibbot-utils'
+import { logError } from 'kibbot_utils'
 
 import { parseMessage } from './parse'
 import { handlers } from './cmds'

@@ -1,6 +1,6 @@
 {
+  "name": "kibbot_utils",
   "private": true,
-  "name": "kibbot-utils",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,5 @@
   "keywords": [],
   "author": "Spencer Alger <email@spalger.com>",
   "license": "Apache-2.0",
-  "description": "",
-  "devDependencies": {}
+  "description": ""
 }

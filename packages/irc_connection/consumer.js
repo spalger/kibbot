@@ -7,7 +7,7 @@ import {
   ACTION_RECEIVE_CONSUMER_IDENT,
   ACTION_IRC_CLIENT_EVENT,
   ALL_IRC_CLIENT_EVENTS,
-} from 'kibbot-utils'
+} from 'kibbot_utils'
 
 import { ircClientFactory } from './irc_client'
 import { clientIdentitySchema } from './schema'
