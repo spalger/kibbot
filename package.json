@@ -20,7 +20,7 @@
     "sinon": "^1.17.3"
   },
 
-  "engine": {
+  "engines": {
     "node": "5.x"
   }
 }
