@@ -1,12 +1,13 @@
 {
   "private": true,
-  "license": "Apache-2.0",
+
   "scripts": {
     "start": "babel-node scripts start",
     "update": "babel-node scripts update",
     "dev": "babel-node scripts dev"
   },
-  "devDependencies": {
+
+  "dependencies": {
     "@spalger/babel-presets": "0.0.1",
     "@spalger/eslint-config-personal": "^0.2.0",
     "babel-cli": "^6.6.5",
@@ -14,9 +15,11 @@
     "chai": "^3.5.0",
     "eslint": "^2.4.0",
     "eslint-plugin-react": "^4.2.3",
+    "lerna": "^1.1.2",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3"
   },
+
   "engine": {
     "node": "5.x"
   }
