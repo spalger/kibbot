@@ -1,4 +1,5 @@
-const action = (name) => `V3:ACTION_${name}`
+import { version } from './package.json'
+const action = (name) => `${version}:ACTION_${name}`
 
 export const ACTION_IRC_SAY = action('IRC_SAY')
 export const ACTION_IRC_CLIENT_EVENT = action('IRC_CLIENT_EVENT')
